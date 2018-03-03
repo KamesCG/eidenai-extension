@@ -1,0 +1,35 @@
+{
+  "name": "Eidenai",
+  "author": "Eidenai.co",
+  "homepage_url": "https://kamescg.com/",
+  "icons": { "128": "images/icon_128.png" },
+  "manifest_version": 2,
+  "description": "Decentralize Some of the Things.",
+  "version": "0.904",
+  "background":
+  {
+    "scripts":["background.bundle.js"],
+    "persistent": true
+  },
+  "browser_action": {
+    "default_icon": "images/icon.png",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*/*"],
+      "js": ["script/pageload/functions.js", "script/pageload/body.js", "script/pageload/callbacks.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "options_page": "options.html",
+  "permissions": [
+    "activeTab",
+    "debugger",
+    "webRequest",
+    "<all_urls>"
+  ],
+  "storage": {
+    "managed_schema": "schema.json"
+  }
+}
