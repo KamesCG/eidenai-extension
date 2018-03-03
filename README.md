@@ -1,2 +1,2 @@
-# Decentralized Application Manager | Extension
-### Manage uPort Distributed Application from Extension
+# Eidenai | Extension
+### Know Through Vision
