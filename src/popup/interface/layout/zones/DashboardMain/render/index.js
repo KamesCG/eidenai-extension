@@ -12,6 +12,6 @@ DashboardMainStyled.defaultProps = {
   justify: 'space-evenly',
 }
 /* ---------------------------- Module Package ------------------------------ */
-export default props => <DashboardMainStyled bs={2} {...props} {...props.layout}/>
+export default props => <DashboardMainStyled bs={2} {...props.layout} {...props} />
 
 

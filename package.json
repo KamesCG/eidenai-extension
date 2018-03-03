@@ -24,6 +24,7 @@
     "humanize": "^0.0.9",
     "idx": "^2.2.0",
     "immutable": "^3.8.2",
+    "ipfs-api": "^18.1.1",
     "jquery": "^3.2.1",
     "luxon": "^0.2.11",
     "material-ui": "^0.20.0",
@@ -68,6 +69,7 @@
     "superagent": "^3.6.0",
     "uport-connect": "^0.7.0",
     "url-loader": "0.5.9",
+    "url-parser": "^0.0.1",
     "validator": "^8.0.0",
     "whatwg-fetch": "2.0.3"
   },

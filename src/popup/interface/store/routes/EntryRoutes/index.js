@@ -1,40 +1,27 @@
 /* ------------------------- External Dependencies -------------------------- */
 import React from 'react';
-import { Switch, Route } from 'react-router';
 import styled from 'styled-components'
-import { BackgroundGradient, Box } from 'atoms'
-/* ------------------------- External Dependencies -------------------------- */
-import SiteEntry from 'layout/entry/Site'
+import { Switch, Route } from 'react-router';
+/* ------------------------- Internal Dependencies -------------------------- */
+import { BackgroundGradient, Box } from 'atomic'
+import Extension from 'layout/entry/Extension'
 import DashboardEntry from 'layout/entry/Dashboard'
 import { DialogFactory, DrawerFactory } from 'containers'
-import { ToastContainer, toast } from 'react-toastify';
 
 const Magic = styled.div`
 opacity: 0.999999;
 z-index: 500;
 `
 
-const ToastSetting = {
-  position: 'top-right',
-  type: 'default',
-  autoClose: 5000,
-  hideProgressBar: false,
-  newestOnTop: false,
-  closeOnClick: true,
-  pauseOnHover: true,
-}
-
 export default () => (
 <div>
-  <BackgroundGradient gradient='blue' left right top bottom />
+  <BackgroundGradient gradient='purple' left right top bottom />
   <Box z={[10000]} >
-    <DialogFactory/>
     <DrawerFactory/>
-    <ToastContainer {...ToastSetting}/>
   </Box>
   <Magic>
     <Switch>
-      <Route path="/settings" component={SiteEntry} />
+      <Route path="/settings" component={Extension} />
       <Route path="/" component={DashboardEntry} />
     </Switch>
   </Magic>

@@ -1,10 +1,15 @@
 {
   "background.js": "background.bundle.js",
+  "background.js.map": "background.bundle.js.map",
   "options.js": "options.bundle.js",
-  "popup.css": "static/css/popup.00725281.css",
-  "popup.css.map": "static/css/popup.00725281.css.map",
+  "options.js.map": "options.bundle.js.map",
+  "popup.css": "static/css/popup.31478278.css",
+  "popup.css.map": "static/css/popup.31478278.css.map",
   "popup.js": "popup.bundle.js",
-  "static/js/0.e25e1eeb.chunk.js": "static/js/0.e25e1eeb.chunk.js",
+  "popup.js.map": "popup.bundle.js.map",
+  "static/js/0.faba9572.chunk.js": "static/js/0.faba9572.chunk.js",
+  "static/js/0.faba9572.chunk.js.map": "static/js/0.faba9572.chunk.js.map",
   "static/media/MacbookPro.png": "static/media/MacbookPro.bf02f453.png",
-  "static/media/Smartphone.png": "static/media/Smartphone.d2d5eae8.png"
+  "static/media/Smartphone.png": "static/media/Smartphone.d2d5eae8.png",
+  "static/media/travel.png": "static/media/travel.43cb89af.png"
 }

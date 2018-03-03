@@ -104,7 +104,7 @@ module.exports = {
       forms: path.resolve(__dirname, '../src/core/forms'),
       logic: path.resolve(__dirname, '../src/core/logic'),
       services: path.resolve(__dirname, '../src/core/logic/services'),
-      store: path.resolve(__dirname, '../src/core/store'),
+      store: path.resolve(__dirname, '../src/popup/interface/store'),
       theme: path.resolve(__dirname, '../src/core/theme'),
     },
     

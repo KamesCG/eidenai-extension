@@ -16,35 +16,34 @@ import UPortCredentialsRequest from 'assimilation/fetching/uport/UPortCredential
 export default props =>
 <Flex
   align={"stretch"} wrap='wrap'
-  bg={['blue']} gradient={'blue'} gradientDir='182deg' 
   bs={[0]} 
   color={['white']}
+  py={20}
   pos='relative'
 >
 
   <Flex align="center" justify="left" w={[0.1]} pl={[15]} py={[7]} direction={['row']} >
-    <Link to="/"><Heading color={'white'} level={4} margin={'0'} fontSize={[3,4]} fontWeight={'100'}>Eidenai</Heading></Link>
     <DrawerOpen>
       <a><SVG svg={icons.uiListDetail} svgColor='white' ml={10} width={20}/></a>
     </DrawerOpen>
-    <DrawerOpen>
+    {/* <DrawerOpen>
       <Heading f={[2]} level={[4]} mb={0} ml={10}><a>menu</a></Heading>
-    </DrawerOpen>
+    </DrawerOpen> */}
   </Flex>
   <Flex align="center" justify="left" w={[0.70]} pl={[15]} py={[7]} direction={['row']} >
     {/* <UPortCredentialsRequest/> */}
     <Flex justify='space-evenly' w={1} >
       <Box px={10} >
-        <Link to="/documents" > Đocuments</Link>
+        <Link to="/dapps">ĐApps</Link>
       </Box>
       <Box px={10} >
-      <Link to="/dapps">ĐApps</Link>
-      </Box>
-      <Box px={10} >
-        <Link to="/bounties">Bounties</Link>
+        <Link to="/documents" >Đocuments</Link>
       </Box>
       <Box px={10} >
         <Link to="/tokens">Tokens</Link>
+      </Box>
+      <Box px={10} >
+        <Link to="/ens">ENS</Link>
       </Box>
     </Flex>
   </Flex>
@@ -53,6 +52,5 @@ export default props =>
     align="center" justify='flex-end' 
     pr={10} py={[10]} w={[0.20]}
   >
-    <UPortCredentialsRequest text="login" />
   </Flex>
 </Flex>

@@ -9,6 +9,8 @@ import { configureStore, history } from './interface/store/configuration';
 
 const store = configureStore();
 
+console.log(localStorage)
+
 window.onload = ()=> {
     const root = document.getElementById('root')
     ReactDOM.render(<Root store={store} history={history} />, root);

@@ -10,6 +10,8 @@ import sagas from '../departments/sagas'
 
 const history = createHashHistory();
 
+const localStorageConst = localStorage
+
 const configureStore = (initialState, services = {}) => {
   // Redux Configuration
   const middleware = [];
@@ -50,7 +52,9 @@ const configureStore = (initialState, services = {}) => {
   enhancers.push(applyMiddleware(...middleware));
   const enhancer = composeEnhancers(...enhancers);
 
-  initialState = {}
+  initialState = {
+    local: {...localStorageConst}
+  }
 
   const store = createStore(rootReducer, initialState, enhancer);
   let sagaTask = sagaMiddleware.run(sagas)

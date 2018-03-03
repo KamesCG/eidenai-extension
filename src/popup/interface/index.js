@@ -5,7 +5,7 @@ import 'extensionTheme/stylesheet/app.global.css'
 import React from 'react';
 /* ------------------------- Internal Dependencies -------------------------- */
 import Providers from './components/providers'
-import Entry from './layout/entry'
+import Entry from 'extensionStore/routes/EntryRoutes'
 
 /* ---------------------------- Initialization ------------------------------ */
 export default ({ store, history }) => {

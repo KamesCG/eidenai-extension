@@ -22,8 +22,8 @@ export default () => (
   </Block>
   <Block z={[300]} o={0.999999} >
     <Switch>
-      <Route path="/dashboard" component={DashboardEntry} />
-      <Route path="/" component={ExtensionEntry} />
+      <Route path="/settings" component={ExtensionEntry} />
+      <Route path="/" component={DashboardEntry} />
     </Switch>
   </Block>
 </div>

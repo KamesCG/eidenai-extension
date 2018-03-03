@@ -1,3 +1,5 @@
+import parse from 'url-parse'
+
 window.chrome.extension.onMessage.addListener(function(message, sender) {
     if(typeof message == 'string'){
       window.chrome.browserAction.setBadgeBackgroundColor({
@@ -26,30 +28,71 @@ function RequestOnComplete(data) {
 //     },
 //     {urls: ["<all_urls>"]},
 //     ["requestHeaders"]);
+
+let chasquiWatch = false;
+// Chasqui Watch
+// To initialize the IPFS observer we wait for a chasqui response
+
+const chasqui = "chasqui.uport.me"
+const ipfs = "ipfs.infura.io"
+const ipfsLimit = 6
+let ipfsTotal = 0
     
 window.chrome.webRequest.onCompleted.addListener(
     function(details) {
-      console.log(details)
-
-      if(details.url == 'https://ipfs.infura.io/ipfs/QmUyRjAc8aRq6WeDAyDDMZcyWBWRvPMnY4izhTskyoyDik' ) {
-          console.log('match person')
-        fetch('https://ipfs.infura.io/ipfs/QmUyRjAc8aRq6WeDAyDDMZcyWBWRvPMnY4izhTskyoyDik', {
-            headers: {
-              'accept': 'application/json'
+        if (details.url) {
+            const urlParsed = parse(details.url, {})
+            if(urlParsed.hostname === chasqui) {
+                chasquiWatch = true
             }
-          })
-            .then(res => {
-              if (!res.ok) return Promise.reject(new Error(`HTTP Error ${res.status}`));
-                console.log(res)
-              return res.json(); // parse json body
-            })
-            .then(data => {
-              // do stuff with data from parsed json response body
-              console.log(data);
-              console.log(data.body);
-            })
-            .catch(err => console.error(err));
-      }
+        }
+
+        if(chasquiWatch) {
+            const urlParsed = parse(details.url, {})
+            if(urlParsed.hostname === ipfs) {
+                ipfsTotal++
+                if(ipfsTotal == ipfsLimit) chasquiWatch = false
+                console.log(details.url)
+                fetch(details.url, {
+                    headers: {
+                    'accept': 'application/json'
+                    }
+                })
+                .then(res => {
+                if (!res.ok) return Promise.reject(new Error(`HTTP Error ${res.status}`));
+                    console.log(res)
+                    return res.json(); // parse json body
+                })
+                .then(data => {
+                    console.log(data);
+                    if(data.publicKey) {
+                        localStorage.setItem(data.publicKey, JSON.stringify(data));
+                        console.log(localStorage)
+                    }
+                })
+                .catch(err => console.error(err));
+            }
+        }
+            
+      // if(details.url == 'https://chasqui.uport.me/api/v1/topic/A3ZNnLOWWuewXC7r' ) {
+      //     console.log('match person')
+      //   fetch('https://ipfs.infura.io/ipfs/QmUyRjAc8aRq6WeDAyDDMZcyWBWRvPMnY4izhTskyoyDik', {
+      //       headers: {
+      //         'accept': 'application/json'
+      //       }
+      //     })
+      //       .then(res => {
+      //         if (!res.ok) return Promise.reject(new Error(`HTTP Error ${res.status}`));
+      //           console.log(res)
+      //         return res.json(); // parse json body
+      //       })
+      //       .then(data => {
+      //         // do stuff with data from parsed json response body
+      //         console.log(data);
+      //         console.log(data.body);
+      //       })
+      //       .catch(err => console.error(err));
+      // }
 
     },
     {urls: ["<all_urls>"]},

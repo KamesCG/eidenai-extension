@@ -2,71 +2,32 @@ import { svg, icons } from 'assets'
 
 export default [
 {
-  title: 'People',
-  to: '/dashboard/people',
-  svg: icons.uiAvatar,
-  childrenItems: PeopleChildren
+  title: 'Bounties',
+  to: '/bounties',
+  svg: icons.uiCode,
+  childrenItems: QuestChildren
 },
 {
-  title: 'Calendar',
-  to: '/dashboard/calendar',
-  svg: icons.uiCalendar,
+  title: 'Quests',
+  to: '/quests',
+  svg: icons.uiMoon,
 },
 {
-  title: 'Notifcations',
-  to: '/dashboard/notifcations',
-  svg: icons.uiNotifications,
+  title: 'Tokens',
+  to: '/quests',
+  svg: icons.uiChartPie,
 },
 {
-  title: 'Settings',
-  to: '/dashboard/health',
-  svg: icons.uiWrench,
-},
-
-
-{
-  title: 'Companies',
-  to: '/dashboard/organizations',
-  svg: icons.uiOffice,
-  childrenItems: [
-    {
-      title: 'Map',
-      to: '/dashboard/organizations/map',
-      svg: svg.laptop,
-      gradient: 'purple',
-      gradientDir: '90deg',
-      titleWrap: {
-        bg:'white',
-        px: [10,15],
-      },
-        wrapper: {
-        display: 'flex',
-        align: 'center',
-      },
-    },
-    {
-      title: 'Add',
-      to: '/dashboard/organization/add',
-      svg: svg.networkCentral,
-      gradient: 'purple',
-      gradientDir: '150deg',
-      titleWrap: {
-        bg:'white',
-        px: [10,15],
-      },
-        wrapper: {
-        display: 'flex',
-        align: 'center',
-      },
-    },
-  ]
+  title: 'Community',
+  to: '/community',
+  svg: icons.uiPulse,
 },
 ]
 
-const PeopleChildren = [
+const QuestChildren = [
   {
     title: 'Map',
-    to: '/dashboard/people/map',
+    to: '/quests/map',
     svg: svg.brain,
     gradient: 'crimson',
     gradientDir: '90deg',

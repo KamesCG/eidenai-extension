@@ -25,7 +25,7 @@ export default  ({ zones, header, main, aside, ...props }) =>
   )}
   {/* Main Zone */}
   {!zones.main ? null: (
-    <DashboardMain {...main.layout}>
+    <DashboardMain {...main.layout} h={'100vh'} >
       {!zones.panelLeft 
         ? null 
         :<DashboardMainPanelLeft {...main.regions.panelLeft.layout}>
